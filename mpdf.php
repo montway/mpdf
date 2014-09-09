@@ -18586,7 +18586,8 @@ function CloseTag($tag)
 	}
 	else { 
 		if (isset($this->InlineProperties[$tag]) && count($this->InlineProperties[$tag])) { 
-			$this->restoreInlineProperties(array_pop($this->InlineProperties[$tag])); 
+			$inlineProperties = array_pop($this->InlineProperties[$tag]);
+			$this->restoreInlineProperties($inlineProperties); 
 		}
 		if (isset($this->InlineAnnots[$tag]) && count($this->InlineAnnots[$tag])) { 	// *ANNOTATIONS*
 			$annot = array_pop($this->InlineAnnots[$tag]); 	// *ANNOTATIONS*
